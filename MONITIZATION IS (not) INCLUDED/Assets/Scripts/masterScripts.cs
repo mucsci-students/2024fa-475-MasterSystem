@@ -5,6 +5,8 @@
 using UnityEngine;
 using UnityEngine.UI; // Note this new line is needed for UI
 
+/*
+
 public class GameManager : MonoBehaviour
 {
 	public Text scoreText;
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour
 }
 
 //General trigger script
-using UnityEngine;
+
 
 public class DestroyOnTrigger : MonoBehaviour
 {
@@ -41,7 +43,7 @@ public class DestroyOnTrigger : MonoBehaviour
 
 
 //Spawning Meteor
-using UnityEngine;
+
 
 public class MeteorSpawn : MonoBehaviour
 {
@@ -66,7 +68,7 @@ public class MeteorSpawn : MonoBehaviour
 	}
 }
 //Moving Meteor
-using UnityEngine;
+
 
 public class MeteorMover : MonoBehaviour
 {
@@ -83,7 +85,7 @@ public class MeteorMover : MonoBehaviour
 }
 
 //Control player ship
-using UnityEngine;
+
 
 public class ShipControl : MonoBehaviour
 {
@@ -128,3 +130,5 @@ public class ShipControl : MonoBehaviour
 		gameManager.PlayerDied();
 	}
 }
+
+*/

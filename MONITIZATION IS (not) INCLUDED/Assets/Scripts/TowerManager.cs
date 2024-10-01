@@ -17,7 +17,7 @@ public class TowerManager : MonoBehaviour
 
     public void placeTower(Vector2Int position){
         if (gridManager.IsTileEmpty(position.x, position.y)){
-            GameObject tower = Instantiate(towerPrefab, new Vector3(position.x, position.y, 0));
+            GameObject tower = Instantiate(towerPrefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
             gridManager.PlaceObjectInTile(tower, position.x, position.y);
         }
     }

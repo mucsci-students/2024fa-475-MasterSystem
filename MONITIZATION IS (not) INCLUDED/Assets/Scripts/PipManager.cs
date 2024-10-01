@@ -21,11 +21,11 @@ public class PipManager : MonoBehaviour
 
     void SpawnPips()
     {
-        // I have no idea how to loop this
-        int spawnCol; // = Random()?? idk how
+        //This will generate a random colomn for pips to spawn in, it should be random every time a pip is created maybe
+        int spawnCol = Random.Range(1,6); 
         
-        GameObject pip = Instantiate(goodPipPrefab, new Vector3(spawnColumn, gridManager.rows - 1, 0)) //only spawning good pips
-        GridManager.PlaceObjectInTile(pip, gridManager.rows-1, spawnCol)
+        GameObject pip = Instantiate(goodPipPrefab, new Vector3(spawnCol, gridManager.rows - 1, 0), Quaternion.identity); //only spawning good pips
+        gridManager.PlaceObjectInTile(pip, gridManager.rows-1, spawnCol);
     }
 
     // Handle pushing pips by the player
