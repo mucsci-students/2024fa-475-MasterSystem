@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Pips
+    uniqueID: 4072428923
+    locked: 0
+  - name: background
+    uniqueID: 3688981139
+    locked: 0
