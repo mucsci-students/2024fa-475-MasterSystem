@@ -3,19 +3,24 @@
 // Handles the overarching state of the game: whether it's started or not, the current score, and when the level ends
 using UnityEngine;
 using UnityEngine.SceneManagement; // Required for switching between scenes
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public UIManager uiManager; 
-    public int playerScore;
+    public int playerScore = 0;
     public int goal = 5;
-    public int money;
+    public int money = 0;
+
+    public Button newGameButton;
 
     private bool gameOver = false;
 
     public void Start(){
-        uiManager.updateUI(playerScore, money);
-        Invoke("NewLevel", 1f);
+        //Requiered initialization of a UIManager
+        uiManager = new UIManager();
+        uiManager.updateUI(money, playerScore);
+        newGameButton.onClick.AddListener(NewLevel);
     }
 
     // Method to increase player's score
@@ -28,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeMoney(int amount){
         money += amount;
-        uiManager.updateUI(playerScore, money);
+        uiManager.updateUI(money, playerScore);
         if(money<0){
             GameOver(false);
         }

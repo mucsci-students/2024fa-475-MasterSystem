@@ -4,7 +4,7 @@ public class BackgroundRepeater : MonoBehaviour
 {
     public GameObject tilePrefab; 
     public Camera mainCamera; 
-    public Vector2 tileSize = new Vector2(1, 1); 
+    public Vector2 tileSize; 
 
     void Start()
     {
@@ -17,6 +17,8 @@ public class BackgroundRepeater : MonoBehaviour
     {
         // Calculate screen bounds in world units
         Vector2 screenBounds = GetScreenBounds();
+
+        tileSize = new Vector2(screenBounds.x / 8, screenBounds.x / 8);
 
         // Calculate the starting position based on the camera center
         Vector3 startPosition = mainCamera.transform.position - new Vector3(screenBounds.x / 2, screenBounds.y / 2, 0);
@@ -34,11 +36,8 @@ public class BackgroundRepeater : MonoBehaviour
     // Function to calculate screen bounds in world coordinates
     Vector2 GetScreenBounds()
     {
-        Vector3 bottomLeft = mainCamera.ScreenToWorldPoint(new Vector3(0, 0, mainCamera.transform.position.z));
-        Vector3 topRight = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
-
-        float width = topRight.x - bottomLeft.x;
-        float height = topRight.y - bottomLeft.y;
+        int height = Screen.height;
+        int width = Screen.width;
 
         return new Vector2(width, height);
     }

@@ -17,8 +17,8 @@ public class UIManager : MonoBehaviour
     }
 
     public void updateUI(int money, int pipCount){
-        moneyText.text = "Balance: $" + money;
-        pipCountText.text = "Good Pips: " + pipCount;
+        //moneyText.text = "Balance: $" + money.ToString();
+        //pipCountText.text = "Good Pips: " + pipCount.ToString();
     }
 
     public void displayGameOver(bool winstatus){
