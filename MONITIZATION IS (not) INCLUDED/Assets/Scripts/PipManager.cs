@@ -9,17 +9,18 @@ public class PipManager : MonoBehaviour
     public GameObject goodPipPrefab;
     public GameObject badPipPrefab;
     public float pipMoveInterval = 2f;
-
+    public float speed = -2f;
+    Rigidbody2D rigidBody;
     private GridManager gridManager;
     private float timeSinceLastMove;
 
-    void Start()
+    public void Start()
     {
         gridManager = new GridManager(); // Found this online but idk C# so feel free to replace
         SpawnPips();
     }
 
-    void SpawnPips()
+    public void SpawnPips()
     {
         //This will generate a random colomn for pips to spawn in, it should be random every time a pip is created maybe
         int spawnCol = Random.Range(1,8); 
@@ -29,6 +30,18 @@ public class PipManager : MonoBehaviour
         
         Invoke("SpawnPips", Random.Range(1f,3f));
     }
+
+    // Push pips down the screen 
+    public void ScrollPip()
+    {
+        
+        rigidBody = GetComponent<Rigidbody2D>();
+        // Give meteor an initial downward velocity
+        rigidBody.velocity = new Vector2(0, speed);
+    }
+
+
+
 
     // Handle pushing pips by the player
     public void PushPip()

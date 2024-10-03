@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         //Requiered initialization of a UIManager
         uiManager = new UIManager();
         uiManager.updateUI(money, playerScore);
-        newGameButton.onClick.AddListener(NewLevel);
+        newGameButton.onClick.AddListener(LoadLevel);
     }
 
     // Method to increase player's score
@@ -49,15 +49,15 @@ public class GameManager : MonoBehaviour
     }
 
     // Get into game by loading level scene
-    // Made this public so it can be added to objects.
-    public void NewLevel(){
+    // Public and renamed for clarity
+    public void LoadLevel(){
         //uiManager.removeTitle();
         SceneManager.LoadScene("GameLevel");
     }
 
 
     // Return to menu by loading other scene
-    void ReturnToMenu(){
+    public void ReturnToMenu(){
         //uiManager.returnTitle();
         SceneManager.LoadScene("MainMenu");
     }

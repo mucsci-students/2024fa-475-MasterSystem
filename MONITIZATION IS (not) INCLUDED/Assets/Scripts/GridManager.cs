@@ -23,12 +23,12 @@ public class GridManager : MonoBehaviour
     // We use a 2D array to represent the board
     public GameObject[,] grid; 
 
-    void Start(){
+    public void Start(){
         InitializeGrid();
     }
 
     // Initialize the grid with empty spaces
-    void InitializeGrid(){
+    public void InitializeGrid(){
         grid = new GameObject[rows, columns];
 
         for (int x = 0; x < rows; x++)
@@ -36,6 +36,7 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < columns; y++)
             {
                 Vector3 position = new Vector3(x * tileSize, y * tileSize, 0);
+                grid[row, column] = null;
                 // Spawn specific grids (seeds) here
             }
         }

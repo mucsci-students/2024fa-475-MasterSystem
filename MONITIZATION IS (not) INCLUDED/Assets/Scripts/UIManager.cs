@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
 
     public Button newGameButton;
 
-    void Start(){
+    public void Start(){
         gameOverText.enabled = false;
     }
 
