@@ -12,6 +12,10 @@ public class UIManager : MonoBehaviour
     public Text pipCountText;
     public Text gameOverText;
 
+    public Text titleText;
+
+    public Button newGameButton;
+
     void Start(){
         gameOverText.enabled = false;
     }
@@ -25,4 +29,14 @@ public class UIManager : MonoBehaviour
         gameOverText.enabled = true;
         gameOverText.text = winstatus ? "You win!" : "You lose!";
     }
+
+    // public void removeTitle(){
+    //     titleText.OnDisable = false;
+    //     newGameButton.OnDisable = false;
+    // }
+
+    // public void returnTitle(){
+    //     titleText.enabled = true;
+    //     newGameButton.enabled = true;
+    // }
 }

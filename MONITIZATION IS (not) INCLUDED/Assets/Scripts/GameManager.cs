@@ -50,12 +50,14 @@ public class GameManager : MonoBehaviour
 
     // Get into game by loading level scene
     void NewLevel(){
+        //uiManager.removeTitle();
         SceneManager.LoadScene("GameLevel");
     }
 
 
     // Return to menu by loading other scene
     void ReturnToMenu(){
+        //uiManager.returnTitle();
         SceneManager.LoadScene("MainMenu");
     }
 }

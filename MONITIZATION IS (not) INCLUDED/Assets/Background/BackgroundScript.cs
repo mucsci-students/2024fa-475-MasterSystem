@@ -18,7 +18,7 @@ public class BackgroundRepeater : MonoBehaviour
         // Calculate screen bounds in world units
         Vector2 screenBounds = GetScreenBounds();
 
-        tileSize = new Vector2(screenBounds.x / 8, screenBounds.x / 8);
+        tileSize = new Vector2(screenBounds.x , screenBounds.y );
 
         // Calculate the starting position based on the camera center
         Vector3 startPosition = mainCamera.transform.position - new Vector3(screenBounds.x / 2, screenBounds.y / 2, 0);
