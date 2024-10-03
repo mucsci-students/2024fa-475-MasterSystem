@@ -2,37 +2,55 @@
 
 // Handles the overarching state of the game: whether it's started or not, the current score, and when the level ends
 using UnityEngine;
-using UnityEngine.UI; // Required for working with UI elements
+using UnityEngine.SceneManagement; // Required for switching between scenes
 
 public class GameManager : MonoBehaviour
 {
-    public Text pipScoreText; // UI element to display player's progress towards objective
-    public Text gameOverText; // UI element to display the game over message
+    public UIManager uiManager; 
+    public int playerScore;
+    public int goal = 5;
+    public int money;
 
-    private int playerScore = 0; // Player's current score
+    private bool gameOver = false;
 
-    void Start(){
-        // Ensure the game over text is hidden when the game starts
-        gameOverText.enabled = false;
+    public void Start(){
+        uiManager.updateUI(playerScore, money);
+        Invoke("NewLevel", 1f);
     }
 
     // Method to increase player's score
     public void AddScore(){
         playerScore++; 
-        pipScoreText.text = playerScore.ToString(); // Update the score text on UI
+        if(playerScore>goal){
+            GameOver(true);
+        }
     }
 
-    // Method to handle game over state
-    public void GameOver(){
-        gameOverText.enabled = true; // Show game over text
-        Time.timeScale = 0; // Freeze the game
+    public void ChangeMoney(int amount){
+        money += amount;
+        uiManager.updateUI(playerScore, money);
+        if(money<0){
+            GameOver(false);
+        }
     }
 
-    // Method to restart the game 
-    public void RestartGame(){
-        Time.timeScale = 1; // Resume the game
-        gameOverText.enabled = false; // Hide game over text
-        playerScore = 0; // Reset player score
-        pipScoreText.text = playerScore.ToString(); // Update score on UI
+
+
+    // Methods to handle game over state
+    public void GameOver(bool winstatus){
+        gameOver = true;
+        uiManager.displayGameOver(winstatus);
+        Invoke("ReturnToMenu", 2f);
+    }
+
+    // Get into game by loading level scene
+    void NewLevel(){
+        SceneManager.LoadScene("GameLevel");
+    }
+
+
+    // Return to menu by loading other scene
+    void ReturnToMenu(){
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -10,26 +10,19 @@ public class UIManager : MonoBehaviour
 {
     public Text moneyText;
     public Text pipCountText;
-
-    private int money;
-    private int pipCount;
+    public Text gameOverText;
 
     void Start(){
-        updateUI();
+        gameOverText.enabled = false;
     }
 
-    void updateUI(){
+    public void updateUI(int money, int pipCount){
         moneyText.text = "Balance: $" + money;
         pipCountText.text = "Good Pips: " + pipCount;
     }
 
-    public void addMoney(int dollars){
-        money+=dollars;
-        updateUI();
-    }
-
-    public void addPipCount(int pips){
-        pipCount+=pips;
-        updateUI();
+    public void displayGameOver(bool winstatus){
+        gameOverText.enabled = true;
+        gameOverText.text = winstatus ? "You win!" : "You lose!";
     }
 }

@@ -1,0 +1,45 @@
+using UnityEngine;
+
+public class BackgroundRepeater : MonoBehaviour
+{
+    public GameObject tilePrefab; 
+    public Camera mainCamera; 
+    public Vector2 tileSize = new Vector2(1, 1); 
+
+    void Start()
+    {
+        // Fill the entire camera view with tiles
+        FillBackgroundWithTiles();
+    }
+
+    // Function to fill the background with repeated tiles
+    void FillBackgroundWithTiles()
+    {
+        // Calculate screen bounds in world units
+        Vector2 screenBounds = GetScreenBounds();
+
+        // Calculate the starting position based on the camera center
+        Vector3 startPosition = mainCamera.transform.position - new Vector3(screenBounds.x / 2, screenBounds.y / 2, 0);
+
+        // Spawn tiles to fill the camera view
+        for (float x = startPosition.x; x < startPosition.x + screenBounds.x; x += tileSize.x)
+        {
+            for (float y = startPosition.y; y < startPosition.y + screenBounds.y; y += tileSize.y)
+            {
+                Instantiate(tilePrefab, new Vector3(x, y, 0), Quaternion.identity);
+            }
+        }
+    }
+
+    // Function to calculate screen bounds in world coordinates
+    Vector2 GetScreenBounds()
+    {
+        Vector3 bottomLeft = mainCamera.ScreenToWorldPoint(new Vector3(0, 0, mainCamera.transform.position.z));
+        Vector3 topRight = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
+
+        float width = topRight.x - bottomLeft.x;
+        float height = topRight.y - bottomLeft.y;
+
+        return new Vector2(width, height);
+    }
+}
