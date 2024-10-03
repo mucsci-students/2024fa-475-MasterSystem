@@ -11,19 +11,19 @@ public class PlayerController : MonoBehaviour
 
     private Vector2Int currentPos; // Player's position on the grid
 
-    void Start(){
+    public void Start(){
         gridManager = FindObjectOfType<GridManager>();
         currentPos = new Vector2Int(0, 0); // Starting at the top-left corner
         UpdatePlayerPosition();
     }
 
-    void Update(){
+    public void Update(){
         ArrowKeyMove();
         HandleInteraction();
     }
 
     // Move the player on the grid
-    void ArrowKeyMove(){
+    public void ArrowKeyMove(){
         if (Input.GetKeyDown(KeyCode.UpArrow) && currentPos.y < gridManager.columns - 1)
         {
             currentPos.y++;
@@ -45,12 +45,12 @@ public class PlayerController : MonoBehaviour
     }
 
     // Move the player GameObject visually
-    void UpdatePlayerPosition(){
+    public void UpdatePlayerPosition(){
         transform.position = new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0);
     }
 
     // Interact with the grid (e.g., push commits or place towers)
-    void HandleInteraction(){
+    public void HandleInteraction(){
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // Interaction logic, for example, pushing pips
