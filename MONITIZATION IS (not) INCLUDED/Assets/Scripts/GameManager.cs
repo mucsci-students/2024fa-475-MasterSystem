@@ -49,7 +49,8 @@ public class GameManager : MonoBehaviour
     }
 
     // Get into game by loading level scene
-    void NewLevel(){
+    // Made this public so it can be added to objects.
+    public void NewLevel(){
         //uiManager.removeTitle();
         SceneManager.LoadScene("GameLevel");
     }
