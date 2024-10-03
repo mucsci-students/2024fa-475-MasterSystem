@@ -36,7 +36,9 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < columns; y++)
             {
                 Vector3 position = new Vector3(x * tileSize, y * tileSize, 0);
-                grid[row, column] = null;
+                //Changed grid[row, column] to row[x, y] to fix a compilation error.
+                //Feel free to change if this wasn't intended.
+                grid[x, y] = null;
                 // Spawn specific grids (seeds) here
             }
         }
