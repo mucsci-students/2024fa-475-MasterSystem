@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public UIManager uiManager; 
+
+    public PipManager pipManager; 
     public int playerScore = 0;
     public int goal = 5;
     public int money = 0;
@@ -17,15 +19,17 @@ public class GameManager : MonoBehaviour
     private bool gameOver = false;
 
     public void Start(){
-        //Requiered initialization of a UIManager
-        uiManager = new UIManager();
-        uiManager.updateUI(money, playerScore);
+        uiManager = this.GetComponent<UIManager>();
+
+        pipManager = this.GetComponent<PipManager>();
+
         newGameButton.onClick.AddListener(LoadLevel);
     }
 
     // Method to increase player's score
     public void AddScore(){
         playerScore++; 
+        uiManager.updateScore(playerScore);
         if(playerScore>goal){
             GameOver(true);
         }
@@ -33,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeMoney(int amount){
         money += amount;
-        uiManager.updateUI(money, playerScore);
+        uiManager.updateMoney(money);
         if(money<0){
             GameOver(false);
         }
@@ -53,6 +57,16 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(){
         //uiManager.removeTitle();
         SceneManager.LoadScene("GameLevel");
+        Invoke("updateUI", 2f);
+        Invoke("spawnPips", 2f);
+    }
+
+    public void updateUI(){
+        uiManager.updateUI();
+    }
+
+    public void spawnPips(){
+        pipManager.SpawnPips();
     }
 
 

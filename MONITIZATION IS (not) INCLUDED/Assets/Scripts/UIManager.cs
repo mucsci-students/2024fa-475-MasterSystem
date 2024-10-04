@@ -12,31 +12,30 @@ public class UIManager : MonoBehaviour
     public Text pipCountText;
     public Text gameOverText;
 
-    public Text titleText;
-
-    public Button newGameButton;
-
     public void Start(){
-        gameOverText.enabled = false;
+        
     }
 
-    public void updateUI(int money, int pipCount){
-        //moneyText.text = "Balance: $" + money.ToString();
-        //pipCountText.text = "Good Pips: " + pipCount.ToString();
+    public void updateUI(){
+        moneyText = GameObject.Find("/Canvas/moneyText").GetComponent(typeof(Text)) as Text;
+        pipCountText = GameObject.Find("/Canvas/pipCountText").GetComponent(typeof(Text)) as Text;
+        gameOverText = GameObject.Find("/Canvas/gameOverText").GetComponent(typeof(Text)) as Text;
+
+        gameOverText.enabled = false;
+
+        
+    }
+
+    public void updateMoney(int money){
+        moneyText.text = "Balance: $" + money.ToString();
+    }
+
+    public void updateScore(int Score){
+        pipCountText.text = "Good Pips: " + Score.ToString();
     }
 
     public void displayGameOver(bool winstatus){
         gameOverText.enabled = true;
         gameOverText.text = winstatus ? "You win!" : "You lose!";
     }
-
-    // public void removeTitle(){
-    //     titleText.OnDisable = false;
-    //     newGameButton.OnDisable = false;
-    // }
-
-    // public void returnTitle(){
-    //     titleText.enabled = true;
-    //     newGameButton.enabled = true;
-    // }
 }

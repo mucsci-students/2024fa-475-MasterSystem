@@ -17,7 +17,6 @@ public class PipManager : MonoBehaviour
     public void Start()
     {
         gridManager = new GridManager(); // Found this online but idk C# so feel free to replace
-        SpawnPips();
     }
 
     public void SpawnPips()
