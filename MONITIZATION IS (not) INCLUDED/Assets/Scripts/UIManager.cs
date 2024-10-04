@@ -21,6 +21,12 @@ public class UIManager : MonoBehaviour
         pipCountText = GameObject.Find("/Canvas/pipCountText").GetComponent(typeof(Text)) as Text;
         gameOverText = GameObject.Find("/Canvas/gameOverText").GetComponent(typeof(Text)) as Text;
 
+        moneyText.color = Color.white;
+        pipCountText.color = Color.white;
+
+        moneyText.text = "Balance: $";
+        pipCountText.text = "Good Pips: ";
+
         gameOverText.enabled = false;
 
         
