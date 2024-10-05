@@ -52,21 +52,17 @@ public class PlayerController : MonoBehaviour
 
     // Interact with the grid (e.g., push commits or place towers)
     void HandleInteraction(){
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
             // Interaction logic, for example, pushing pips
             GameObject currentObject = gridManager.grid[currentPos.x, currentPos.y];
 
             if (currentObject != null)
             {
                 // Push or interact with the object
-                PipManager pipManager = currentObject.GetComponent<PipManager>();
-                if (pipManager != null)
-                {
-                    pipManager.PushPip();
-                }
+                Destroy(currentObject.gameObject);
             }
         }
         // IMPLEMENT PRESS Q TO TRASH BAD PIPS
-    }
+    //}
 }

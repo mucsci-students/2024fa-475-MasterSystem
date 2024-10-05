@@ -58,15 +58,15 @@ public class GameManager : MonoBehaviour
         //uiManager.removeTitle();
         SceneManager.LoadScene("GameLevel");
         Invoke("updateUI", 2f);
-        Invoke("spawnPips", 2f);
+        Invoke("spawnPip", 2f);
     }
 
     public void updateUI(){
         uiManager.updateUI();
     }
 
-    public void spawnPips(){
-        pipManager.SpawnPips();
+    public void spawnPip(){
+        pipManager.SpawnPip();
     }
 
 
