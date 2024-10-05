@@ -22,7 +22,8 @@ public class PipManager : MonoBehaviour
     public void SpawnPips()
     {
         //This will generate a random colomn for pips to spawn in, it should be random every time a pip is created maybe
-        int spawnCol = Random.Range(1,8); 
+        //Shifted to account for new grid.
+        int spawnCol = Random.Range(4,11); 
         
         GameObject pip = (GameObject) Instantiate(goodPipPrefab, new Vector3(spawnCol, gridManager.rows - 1, 0), Quaternion.identity); //only spawning good pips
         //gridManager.PlaceObjectInTile(pip, gridManager.rows-1, spawnCol);

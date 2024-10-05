@@ -46,7 +46,8 @@ public class PlayerController : MonoBehaviour
 
     // Move the player GameObject visually
     void UpdatePlayerPosition(){
-        transform.position = new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0);
+        //Offset causes cursor to start in bottom left, as well as grid.
+        transform.position = gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0);
     }
 
     // Interact with the grid (e.g., push commits or place towers)
