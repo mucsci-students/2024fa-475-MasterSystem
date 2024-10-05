@@ -46,6 +46,7 @@ public class GridManager : MonoBehaviour
             }
         }
     }
+    
 
     // Check if a specific tile is empty
     public bool IsTileEmpty(int row, int column){

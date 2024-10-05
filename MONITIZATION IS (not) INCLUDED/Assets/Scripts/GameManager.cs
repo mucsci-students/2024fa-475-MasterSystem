@@ -57,17 +57,8 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(){
         //uiManager.removeTitle();
         SceneManager.LoadScene("GameLevel");
-        Invoke("updateUI", 2f);
-        Invoke("spawnPip", 2f);
     }
 
-    public void updateUI(){
-        uiManager.updateUI();
-    }
-
-    public void spawnPip(){
-        pipManager.SpawnPip();
-    }
 
 
     // Return to menu by loading other scene
