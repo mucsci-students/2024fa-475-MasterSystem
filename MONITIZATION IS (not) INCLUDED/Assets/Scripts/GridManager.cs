@@ -58,8 +58,8 @@ public class GridManager : MonoBehaviour
         grid[row, column] = obj;
     }
 
-    // Remove an object from a specific tile
-    public void RemoveObjectFromTile(int row, int column){
+    // Remove any objects within a specific tile
+    public void EmptyTile(int row, int column){
         grid[row, column] = null;
     }
 }
