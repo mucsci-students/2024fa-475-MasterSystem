@@ -1,14 +1,18 @@
 // PipManager.cs
 
-// Spawns, moves, and destroys each instance of a pip that comes across the screen
+// Creates the general framework for a pip: it has a speed, reward bonus, health amount, and flag to indicate if it's good or bad
 using UnityEngine;
 
 public class PipManager : MonoBehaviour
 {
     public GameObject pipPrefab;
-    public float pipMoveInterval = 2f;
-    public float speed = -2f;
-    
+    public float speed = -1f;
+    public float reward = 0;
+    public float hp = 1;
+    public int isEnemy = 0;
+    public int pipID; //Store a unique identifier for each pip
+    public int row = 0;
+    public int col = 0;
     private GridManager gridManager;
     public float delay;
 
@@ -17,7 +21,7 @@ public class PipManager : MonoBehaviour
         
         Rigidbody2D rigidBody;
         rigidBody = GetComponent<Rigidbody2D>();
-        // Give meteor an initial downward velocity
+
         rigidBody.velocity = new Vector2(0, speed);
         gridManager = FindObjectOfType<GridManager>();
         SpawnPip();
@@ -37,11 +41,6 @@ public class PipManager : MonoBehaviour
         Invoke("SpawnPip", delay);
     }
 
-    // Push pips down the screen 
-    public void ScrollPip()
-    {
-        
-    }
 
 
 
@@ -49,7 +48,8 @@ public class PipManager : MonoBehaviour
     // Handle pushing pips by the player
     public void PushPip()
     {
-        
+        // Current behavior: Destroy pip
+
         // Add specific push behavior for good and bad pips here
     }
 }
