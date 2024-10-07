@@ -59,13 +59,9 @@ public class PlayerController : MonoBehaviour
             if (currentObject != null)
             {
                 // Push or interact with the object
-                PipManager pipManager = currentObject.GetComponent<PipManager>();
-                if (pipManager != null)
-                {
-                    pipManager.PushPip();
-                }
+                Destroy(currentObject.gameObject);
             }
         }
         // IMPLEMENT PRESS Q TO TRASH BAD PIPS
-    }
+    //}
 }
