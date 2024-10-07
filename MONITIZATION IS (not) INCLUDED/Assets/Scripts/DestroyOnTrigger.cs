@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DestroyOnTrigger : MonoBehaviour
 {
-    public void EnterTrigger(Collider2D trash){
-        Destroy(trash.gameObject);
+    public void OnTriggerEnter2D(Collider2D trash){
+        if(trash.gameObject.tag == "pipPreFab")
+            Destroy(trash.gameObject);
     }
 }
