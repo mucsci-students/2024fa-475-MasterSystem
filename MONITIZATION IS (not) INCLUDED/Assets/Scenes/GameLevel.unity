@@ -270,8 +270,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 6
   rows: 12
-  tileSize: 1.8
-  offsetOrigin: {x: -10, y: -4, z: 0}
+  tileSize: 1.82
+  offsetOrigin: {x: -10.25, y: -4, z: 0}
 --- !u!1 &262655173
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,8 +876,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipPrefab: {fileID: 4985220501354642170, guid: 440379133eec99c4ea3261831662976b, type: 3}
-  pipMoveInterval: 2
   speed: -1
+  reward: 0
+  hp: 1
+  isEnemy: 0
+  pipID: 0
+  row: 0
+  col: 0
   delay: 0
 --- !u!61 &1973051587
 BoxCollider2D:

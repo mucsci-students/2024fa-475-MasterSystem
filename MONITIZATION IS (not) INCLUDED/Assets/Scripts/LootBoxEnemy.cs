@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class LootBoxEnemy : Pip
 {
-    speed = 0.5f;
-    hp = 4;
-    isEnemy = 1;
+    float speed = 0.5f;
+    int hp = 4;
+    int isEnemy = 1;
 
 
 private void Start(){}

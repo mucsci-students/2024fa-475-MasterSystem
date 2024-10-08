@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     // Move the player GameObject visually
     public void UpdatePlayerPosition(){
-        transform.position = new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0);
+        transform.position = gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0);
     }
 
     // Interact with the grid (e.g., push commits or place towers)
@@ -55,7 +55,10 @@ public class PlayerController : MonoBehaviour
         {
             // Interaction logic, for example, pushing pips
             GameObject currentObject = gridManager.grid[currentPos.x, currentPos.y];
-
+            //topLeft contains the min x and max y and topRight contains max x and min y for something to be selectable.
+            //So, as long as topLeft x < object x < topRight x and topRight y < object y < topLeft y, it should be selectable.
+            Vector3 topLeft = gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize+gridManager.tileSize/2, currentPos.y * gridManager.tileSize+gridManager.tileSize/2, 0);
+            Vector3 bottomRight = gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize+gridManager.tileSize/2, currentPos.y * gridManager.tileSize+gridManager.tileSize/2, 0);
             if (currentObject != null)
             {
                 // Push or interact with the object
@@ -63,5 +66,5 @@ public class PlayerController : MonoBehaviour
             }
         }
         // IMPLEMENT PRESS Q TO TRASH BAD PIPS
-    //}
+    }
 }

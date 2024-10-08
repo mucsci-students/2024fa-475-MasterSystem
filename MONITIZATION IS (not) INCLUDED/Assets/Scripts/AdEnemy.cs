@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Ad : Pip
 {
-    speed = 2f;
-    hp = 1;
-    isEnemy = 1;
+    float speed = 2f;
+    int hp = 1;
+    int isEnemy = 1;
 
 
 private void Start(){}
