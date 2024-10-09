@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8154291608139388895}
   - component: {fileID: -7961360529691719905}
   - component: {fileID: -936604006071836854}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirewallPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8204318379814756306}
   - component: {fileID: 8099817296283273905}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirewallTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 702238815619937702}
   - component: {fileID: 2234432436053078501}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5672378478147443732}
   - component: {fileID: 3524318852648535835}
   - component: {fileID: -5888089109086658229}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AdEnemyPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

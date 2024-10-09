@@ -1529,7 +1529,7 @@ GameObject:
   - component: {fileID: 1973051586}
   - component: {fileID: 1973051589}
   - component: {fileID: 1973051590}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pip Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

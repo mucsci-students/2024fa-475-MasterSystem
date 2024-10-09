@@ -41,7 +41,7 @@ public class PipManager : MonoBehaviour
 
         randomPip = Instantiate(randomPip,transform);
         
-        randomPip.transform.position += new Vector3(spawnCol * 1.82f, 0f, 0f);
+        randomPip.transform.position += new Vector3(spawnCol * 1.84f, 0f, 0f);
         
         //randomPip.transform.position = transform.position /*+ new Vector3(spawnCol * 1.82f,0f,0f)*/;
         

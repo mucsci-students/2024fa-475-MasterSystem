@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 834755244708254816}
   - component: {fileID: 8360940746557107126}
   - component: {fileID: -146598447597290282}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LootBoxPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 1744699230037653761}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1015859, y: -0.70269716, z: 2.870774}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 254760652345803334}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 254760652345803334}
   - component: {fileID: 7860046085620503846}
   - component: {fileID: 641068623242459244}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LootBox_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 6594360920999385233}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1015859, y: 0.70269716, z: -2.870774}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
