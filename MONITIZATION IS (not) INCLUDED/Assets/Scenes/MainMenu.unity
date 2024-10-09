@@ -309,14 +309,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3712181100dc93c46b576f0f86d188c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pipPrefab: {fileID: 0}
-  speed: -2
-  reward: 0
-  hp: 1
-  isEnemy: 0
-  pipID: 0
-  row: 0
-  col: 0
+  pips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   delay: 0
 --- !u!1 &1640978528
 GameObject:

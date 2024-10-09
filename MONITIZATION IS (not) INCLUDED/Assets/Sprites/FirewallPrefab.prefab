@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8154291608139388895}
   - component: {fileID: -7961360529691719905}
+  - component: {fileID: -936604006071836854}
   m_Layer: 0
   m_Name: FirewallPrefab
   m_TagString: Untagged
@@ -47,7 +48,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -60,6 +61,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-936604006071836854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258541481950315958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3e4576c81524e4d8892b8f1a71810a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  hp: 1
+  isEnemy: 0
 --- !u!1 &6554686094387287323
 GameObject:
   m_ObjectHideFlags: 0

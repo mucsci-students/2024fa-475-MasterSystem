@@ -875,14 +875,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3712181100dc93c46b576f0f86d188c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pipPrefab: {fileID: 4985220501354642170, guid: 440379133eec99c4ea3261831662976b, type: 3}
-  speed: -1
-  reward: 0
-  hp: 1
-  isEnemy: 0
-  pipID: 0
-  row: 0
-  col: 0
+  pips:
+  - {fileID: 4258541481950315958, guid: 1dac8cbfeac551045b517b9b15d58928, type: 3}
+  - {fileID: 1744699230037653761, guid: 935fd6d5d8c6c05408d751c2d58f8c69, type: 3}
+  - {fileID: 771783255461161762, guid: bdb055006face924799cb3c48bbe9ac0, type: 3}
   delay: 0
 --- !u!61 &1973051587
 BoxCollider2D:

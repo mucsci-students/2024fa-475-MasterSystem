@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 529050858622244646}
   - component: {fileID: 834755244708254816}
+  - component: {fileID: 8360940746557107126}
+  - component: {fileID: -146598447597290282}
   m_Layer: 0
   m_Name: LootBoxPrefab
   m_TagString: Untagged
@@ -62,6 +64,48 @@ MonoBehaviour:
       m_Hash: 0
       m_Sprite: {fileID: -69254445, guid: 1272eb497bf47b34d8ca89623f30e24e, type: 3}
   m_SpriteLibraryAsset: {fileID: 0}
+--- !u!50 &8360940746557107126
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744699230037653761}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-146598447597290282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744699230037653761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7db3d2c83686bd42b0d44a7abf8b9d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  hp: 1
+  isEnemy: 0
 --- !u!1 &6594360920999385233
 GameObject:
   m_ObjectHideFlags: 0

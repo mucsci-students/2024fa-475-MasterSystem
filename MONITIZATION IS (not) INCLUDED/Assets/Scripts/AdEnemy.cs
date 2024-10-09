@@ -3,13 +3,23 @@
 // Creates an Ad enemy
 using UnityEngine;
 
-public class Ad : Pip
+public class AdEnemy : Pip
 {
-    float speed = 2f;
-    int hp = 1;
-    int isEnemy = 1;
+    
+    private Rigidbody2D pipBody;
 
+public override void Start(){
+    pipBody = GetComponent<Rigidbody2D>();
+    speed = 2f;
+    hp = 1;
+    isEnemy = true;
+    }
 
-private void Start(){}
+public override void assignScript(GameObject pipPrefab){
+    pipPrefab.AddComponent<AdEnemy>();
+}
 
+    public void FixedUpdate(){
+        pipBody.velocity = (new Vector2(0f, -speed));
+    }
 }
