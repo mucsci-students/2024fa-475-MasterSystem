@@ -13,7 +13,7 @@ public class PipManager : MonoBehaviour
     public float delay;
 
     //Private variables
-    private GridManager gridManager;
+    
     private GameObject randomPip;
 
     private Rigidbody2D pipBody;
@@ -22,26 +22,30 @@ public class PipManager : MonoBehaviour
 
     public void Start()
     {        
-        gridManager = FindObjectOfType<GridManager>();
+        transform.position = new Vector3(-3f, 8f, 0f);
         SpawnPip();
     }
 
     public void SpawnPip()
     {        
         //generates a random number between 0 and 2
-        int ran = UnityEngine.Random.Range(0,2);
-
+        int ran = UnityEngine.Random.Range(0,3);
         //finds a pip based on random number
         randomPip = pips[ran];
 
+        
+
         //This will generate a random colomn for pips to spawn in, it should be random every time a pip is created maybe
         //Shifted to account for new grid.
-        int spawnCol = UnityEngine.Random.Range(-2,6); 
+        int spawnCol = UnityEngine.Random.Range(0,7);
+
+        randomPip = Instantiate(randomPip,transform);
         
-        Instantiate(randomPip, new Vector3((spawnCol*1.82f)+0.65f, 7, 0), Quaternion.identity); //only spawning good pips
-        //gridManager.PlaceObjectInTile(pip, gridManager.rows-1, spawnCol);
+        randomPip.transform.position += new Vector3(spawnCol * 1.82f, 0f, 0f);
         
-        delay = UnityEngine.Random.Range(1f,3f);
+        //randomPip.transform.position = transform.position /*+ new Vector3(spawnCol * 1.82f,0f,0f)*/;
+        
+        delay = UnityEngine.Random.Range(5f,8f);
         Invoke("SpawnPip", delay);
     }
 
