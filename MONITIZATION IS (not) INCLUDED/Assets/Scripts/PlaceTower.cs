@@ -29,8 +29,7 @@ public class PlaceTower : MonoBehaviour
     //1
     void OnMouseUp(){
         
-        
-            
+       
             tower = (GameObject) Instantiate(towerPrefab, transform.position, Quaternion.identity);
             AudioSource audioSource = gameObject.GetComponent<AudioSource>();
             audioSource.PlayOneShot(audioSource.clip);
