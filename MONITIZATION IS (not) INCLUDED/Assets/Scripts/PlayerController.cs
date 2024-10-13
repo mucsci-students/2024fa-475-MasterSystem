@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public void Start(){
         gridManager = FindObjectOfType<GridManager>();
-        currentPos = new Vector2Int(0, 0); // Starting at the top-left corner
+        currentPos = new Vector2Int(4, 0); // Starting at the bottom-left corner
         UpdatePlayerPosition();
     }
 
@@ -23,21 +23,30 @@ public class PlayerController : MonoBehaviour
     }
 
     // Move the player on the grid
-    public void ArrowKeyMove(){
+    public void ArrowKeyMove(){            
+        
         if (Input.GetKeyDown(KeyCode.UpArrow) && currentPos.y < gridManager.columns - 1)
         {
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip);
             currentPos.y++;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && currentPos.y > 0)
         {
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip);
             currentPos.y--;
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && currentPos.x > 0)
-        {
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && currentPos.x > 4)
+        { 
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip);
             currentPos.x--;
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow) && currentPos.x < gridManager.rows - 1)
         {
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip);
             currentPos.x++;
         }
 
