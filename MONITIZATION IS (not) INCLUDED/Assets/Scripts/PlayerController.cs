@@ -10,6 +10,13 @@ public class PlayerController : MonoBehaviour
     private GridManager gridManager;
 
     private Vector2Int currentPos; // Player's position on the grid
+    public GameObject selectedTowerPrefab;
+    
+    // Create references to all towers in the deck
+    public GameObject FirewallPrefab;
+    public GameObject AntivirusPrefab;
+    public GameObject RAMPrefab;
+    public GameObject MousePrefab;
 
     public void Start(){
         gridManager = FindObjectOfType<GridManager>();
@@ -58,22 +65,39 @@ public class PlayerController : MonoBehaviour
         transform.position = gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0);
     }
 
-    // Interact with the grid (e.g., push commits or place towers)
+    // Interact with the grid (e.g., selecting or place towers)
     public void HandleInteraction(){
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && selectedTowerPrefab != null)
         {
-            // Interaction logic, for example, pushing pips
-            GameObject currentObject = gridManager.grid[currentPos.x, currentPos.y];
-            //topLeft contains the min x and max y and topRight contains max x and min y for something to be selectable.
-            //So, as long as topLeft x < object x < topRight x and topRight y < object y < topLeft y, it should be selectable.
-            Vector3 topLeft = gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize+gridManager.tileSize/2, currentPos.y * gridManager.tileSize+gridManager.tileSize/2, 0);
-            Vector3 bottomRight = gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize+gridManager.tileSize/2, currentPos.y * gridManager.tileSize+gridManager.tileSize/2, 0);
-            if (currentObject != null)
+            // Check if the current tile is empty
+            if (gridManager.IsTileEmpty(currentPos.x, currentPos.y))
             {
-                // Push or interact with the object
-                Destroy(currentObject.gameObject);
+                // Spawn the selected tower
+                GameObject tower = Instantiate(selectedTowerPrefab, gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0), Quaternion.identity);
+                gridManager.PlaceObjectInTile(tower, currentPos.x, currentPos.y);
             }
         }
-        // IMPLEMENT PRESS Q TO TRASH BAD PIPS
+
+        // Select towers with 1-4 keys
+        if (Input.GetKeyDown(KeyCode.Alpha1)){
+            selectedTowerPrefab = FirewallPrefab;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            selectedTowerPrefab = AntivirusPrefab;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3)){
+            selectedTowerPrefab = RAMPrefab;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4)){
+            selectedTowerPrefab = MousePrefab;
+        }
+
+        // Unselect with escape key
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            selectedTowerPrefab = null;
+        }
+        
+        // Implement Q to trash bad pips (not implemented yet)
     }
+
 }

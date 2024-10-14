@@ -1,7 +1,9 @@
 using UnityEngine;
 
 public class Tower : MonoBehaviour
-{    public int cost;
+{    
+    public int cost;
+    public string towerName; 
     public GameObject towerInstance;
     // Use this for initialization
     void Start()
@@ -14,4 +16,11 @@ public class Tower : MonoBehaviour
     {
 
     }
+
+
+    public void ActivateTower()
+    {
+        //
+    }
+
 }

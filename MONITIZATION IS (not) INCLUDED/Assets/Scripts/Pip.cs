@@ -28,5 +28,10 @@ public abstract class Pip : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void OnMouseUp()
+    {
+        TakeDamage(1);
+    }
+
     public abstract void assignScript(GameObject pipPrefab);
 }
