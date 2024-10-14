@@ -19,7 +19,7 @@ public class GridManager : MonoBehaviour
 {
     public int columns = 6;
     public int rows = 12;
-    public float tileSize = 1.82f;
+    public float tileSize = 1.84f;
     public Vector3 offsetOrigin = new Vector3(-10.25f,-4, 0);
     
     // We use a 2D array to represent the board

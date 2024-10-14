@@ -85,10 +85,10 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha2)) {
             selectedTowerPrefab = AntivirusPrefab;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3)){
+        else if (Input.GetKeyDown(KeyCode.Alpha4)){
             selectedTowerPrefab = RAMPrefab;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4)){
+        else if (Input.GetKeyDown(KeyCode.Alpha3)){
             selectedTowerPrefab = MousePrefab;
         }
 

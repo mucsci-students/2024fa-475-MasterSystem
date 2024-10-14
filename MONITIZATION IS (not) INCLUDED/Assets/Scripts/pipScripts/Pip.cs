@@ -5,17 +5,23 @@ using UnityEngine;
 
 public abstract class Pip : MonoBehaviour
 {
-    public float speed = 1f;
-    public int hp = 1;
+    public float speed;
+    public int hp;
     public bool isEnemy;
+
+    public Rigidbody2D pipBody;
 
     // Initialize
     public abstract void Start();
 
+    public void FixedUpdate(){
+        pipBody.velocity = (new Vector2(0f, -speed));
+    }
+
     // Method to take damage
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        hp -= damage;
+        hp --;
         if (hp <= 0)
         {
             Die();
@@ -30,8 +36,6 @@ public abstract class Pip : MonoBehaviour
 
     public void OnMouseUp()
     {
-        TakeDamage(1);
+        TakeDamage();
     }
-
-    public abstract void assignScript(GameObject pipPrefab);
 }

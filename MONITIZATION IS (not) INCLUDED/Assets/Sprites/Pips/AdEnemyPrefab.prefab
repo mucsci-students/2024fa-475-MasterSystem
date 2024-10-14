@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1658446645
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9dc414f7ce7900444be0cc296e79ed9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 3650273442611844359}
   - component: {fileID: 5672378478147443732}
   - component: {fileID: 3524318852648535835}
-  - component: {fileID: -5888089109086658229}
   - component: {fileID: 1044731862432344493}
   m_Layer: 3
   m_Name: AdEnemyPrefab
@@ -162,22 +161,7 @@ MonoBehaviour:
   speed: 1
   hp: 1
   isEnemy: 0
---- !u!114 &-5888089109086658229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771783255461161762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a79f6c964e313d44bae1f6e83f0d210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  columns: 6
-  rows: 12
-  tileSize: 1.82
-  offsetOrigin: {x: -10.25, y: -4, z: 0}
+  pipBody: {fileID: 0}
 --- !u!61 &1044731862432344493
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -207,7 +191,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class LootBoxEnemy : Pip
 {
-    
-    private Rigidbody2D pipBody;
 
     public override void Start(){
         pipBody = GetComponent<Rigidbody2D>();
@@ -14,13 +12,4 @@ public class LootBoxEnemy : Pip
         hp = 4;
         isEnemy = true;
     }
-
-    public override void assignScript(GameObject pipPrefab){
-        pipPrefab.AddComponent<LootBoxEnemy>();
-    }
-
-    public void FixedUpdate(){
-        pipBody.velocity = (new Vector2(0f, -speed));
-    }
-
 }

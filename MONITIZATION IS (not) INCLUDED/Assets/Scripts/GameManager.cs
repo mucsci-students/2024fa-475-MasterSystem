@@ -79,13 +79,12 @@ public class GameManager : MonoBehaviour
         gameOverText.enabled = true;
         gameOverText.text = winstatus ? "You win!" : "You lose!";
     
-        Invoke("ReturnToMenu", 2f);
+        Invoke("ReturnToMenu", 5f);
     }
 
     // Get into game by loading level scene
     // Public and renamed for clarity
     public void LoadLevel(){
-        //uiManager.removeTitle();
         scoreLabel.enabled = true;
         moneyLabel.enabled = true;
         depthLabel.enabled = true;
@@ -96,7 +95,6 @@ public class GameManager : MonoBehaviour
 
     // Return to menu by loading other scene
     public void ReturnToMenu(){
-        //uiManager.returnTitle();
         scoreLabel.enabled = false;
         moneyLabel.enabled = false;
         depthLabel.enabled = false;
