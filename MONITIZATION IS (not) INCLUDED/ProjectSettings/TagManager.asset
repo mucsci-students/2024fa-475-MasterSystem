@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pipPreFab
   - levelui
+  - gameman
   layers:
   - Default
   - TransparentFX

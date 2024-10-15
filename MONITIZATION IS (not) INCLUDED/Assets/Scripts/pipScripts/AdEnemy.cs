@@ -11,5 +11,7 @@ public override void Start(){
     speed = 2f;
     hp = 1;
     isEnemy = true;
+    moneyGive = 20;
+    scoreGive = 5;
     }
 }

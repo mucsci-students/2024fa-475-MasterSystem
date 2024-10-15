@@ -8,6 +8,9 @@ public abstract class Pip : MonoBehaviour
     public float speed;
     public int hp;
     public bool isEnemy;
+    public int moneyGive;
+    public int scoreGive;
+    public GameManager gameManager;
 
     public Rigidbody2D pipBody;
 
@@ -24,6 +27,9 @@ public abstract class Pip : MonoBehaviour
         hp --;
         if (hp <= 0)
         {
+            GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
+            gameManager.ChangeScore(scoreGive);
+            gameManager.ChangeMoney(moneyGive);
             Die();
         }
     }

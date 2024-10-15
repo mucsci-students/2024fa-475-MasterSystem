@@ -70,6 +70,14 @@ public class GameManager : MonoBehaviour
             GameOver(false);
         }
     }
+    public int GetMoney()
+    {
+        return money;
+    }
+    public int GetScore()
+    {
+        return score;
+    }
 
 
 

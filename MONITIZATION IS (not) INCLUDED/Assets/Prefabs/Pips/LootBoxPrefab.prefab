@@ -107,6 +107,8 @@ MonoBehaviour:
   speed: 1
   hp: 1
   isEnemy: 0
+  moneyGive: 0
+  scoreGive: 0
   pipBody: {fileID: 0}
 --- !u!61 &4083530685880051292
 BoxCollider2D:
