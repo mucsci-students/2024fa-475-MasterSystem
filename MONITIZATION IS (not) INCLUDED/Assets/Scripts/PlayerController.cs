@@ -10,34 +10,50 @@ public class PlayerController : MonoBehaviour
     private GridManager gridManager;
 
     private Vector2Int currentPos; // Player's position on the grid
+    public GameObject selectedTowerPrefab;
+    
+    // Create references to all towers in the deck
+    public GameObject FirewallPrefab;
+    public GameObject AntivirusPrefab;
+    public GameObject RAMPrefab;
+    public GameObject MousePrefab;
 
-    void Start(){
+    public void Start(){
         gridManager = FindObjectOfType<GridManager>();
-        currentPos = new Vector2Int(0, 0); // Starting at the top-left corner
+        currentPos = new Vector2Int(4, 0); // Starting at the bottom-left corner
         UpdatePlayerPosition();
     }
 
-    void Update(){
+    public void Update(){
         ArrowKeyMove();
         HandleInteraction();
     }
 
     // Move the player on the grid
-    void ArrowKeyMove(){
+    public void ArrowKeyMove(){            
+        
         if (Input.GetKeyDown(KeyCode.UpArrow) && currentPos.y < gridManager.columns - 1)
         {
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip);
             currentPos.y++;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && currentPos.y > 0)
         {
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip);
             currentPos.y--;
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && currentPos.x > 0)
-        {
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && currentPos.x > 4)
+        { 
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip);
             currentPos.x--;
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow) && currentPos.x < gridManager.rows - 1)
         {
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip);
             currentPos.x++;
         }
 
@@ -45,27 +61,43 @@ public class PlayerController : MonoBehaviour
     }
 
     // Move the player GameObject visually
-    void UpdatePlayerPosition(){
-        transform.position = new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0);
+    public void UpdatePlayerPosition(){
+        transform.position = gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0);
     }
 
-    // Interact with the grid (e.g., push commits or place towers)
-    void HandleInteraction(){
-        if (Input.GetKeyDown(KeyCode.Space))
+    // Interact with the grid (e.g., selecting or place towers)
+    public void HandleInteraction(){
+        if (Input.GetKeyDown(KeyCode.Space) && selectedTowerPrefab != null)
         {
-            // Interaction logic, for example, pushing pips
-            GameObject currentObject = gridManager.grid[currentPos.x, currentPos.y];
-
-            if (currentObject != null)
+            // Check if the current tile is empty
+            if (gridManager.IsTileEmpty(currentPos.x, currentPos.y))
             {
-                // Push or interact with the object
-                PipManager pipManager = currentObject.GetComponent<PipManager>();
-                if (pipManager != null)
-                {
-                    pipManager.PushPip();
-                }
+                // Spawn the selected tower
+                GameObject tower = Instantiate(selectedTowerPrefab, gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0), Quaternion.identity);
+                gridManager.PlaceObjectInTile(tower, currentPos.x, currentPos.y);
             }
         }
-        // IMPLEMENT PRESS Q TO TRASH BAD PIPS
+
+        // Select towers with 1-4 keys
+        if (Input.GetKeyDown(KeyCode.Alpha1)){
+            selectedTowerPrefab = FirewallPrefab;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            selectedTowerPrefab = AntivirusPrefab;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4)){
+            selectedTowerPrefab = RAMPrefab;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3)){
+            selectedTowerPrefab = MousePrefab;
+        }
+
+        // Unselect with escape key
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            selectedTowerPrefab = null;
+        }
+        
+        // Implement Q to trash bad pips (not implemented yet)
     }
+
 }
