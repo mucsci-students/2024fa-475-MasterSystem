@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour
         currentPos = new Vector2Int(4, 0); // Starting at the bottom-left corner
         
         FireWallCost = -150;
-        AntivirusCost = -100;
-        RAMCost = -100;
+        AntivirusCost = -200;
+        RAMCost = -50;
         MouseCost = -100;
         CurCost = 0;
 

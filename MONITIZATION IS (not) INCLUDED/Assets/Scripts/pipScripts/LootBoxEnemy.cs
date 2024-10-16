@@ -11,5 +11,7 @@ public class LootBoxEnemy : Pip
         speed = 0.5f;
         hp = 4;
         isEnemy = true;
+        moneyGive = 50;
+        scoreGive = 0;
     }
 }

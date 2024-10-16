@@ -12,6 +12,6 @@ public override void Start(){
     hp = 1;
     isEnemy = true;
     moneyGive = 20;
-    scoreGive = 5;
+    scoreGive = 0;
     }
 }
