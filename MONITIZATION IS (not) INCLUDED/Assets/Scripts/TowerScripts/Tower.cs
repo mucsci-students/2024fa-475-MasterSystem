@@ -8,7 +8,7 @@ public abstract class Tower : MonoBehaviour
     // Use this for initialization
     public abstract void Start();
 
-    public void OnTriggerEnter(Collider other){
+    public virtual void OnTriggerEnter(Collider other){
         hp--;
         if(hp <= 0){
             Destroy(gameObject);

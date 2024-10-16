@@ -307,6 +307,12 @@ MonoBehaviour:
   AntivirusPrefab: {fileID: 6230829158012769626, guid: a380a250e8b6aa940a843876417d4aba, type: 3}
   RAMPrefab: {fileID: 5483957219539402098, guid: 6ada4b2986def9d42bbf9dd4c9ff76d5, type: 3}
   MousePrefab: {fileID: 2050611023961196225, guid: b9634a0776a915c4f921a23d5d029c88, type: 3}
+  gameManager: {fileID: 0}
+  FireWallCost: 0
+  AntivirusCost: 0
+  RAMCost: 0
+  MouseCost: 0
+  CurCost: 0
 --- !u!156049354 &109011889
 Grid:
   m_ObjectHideFlags: 0
@@ -2400,7 +2406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -444, y: 156}
+  m_AnchoredPosition: {x: -484.2, y: 264.7}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &899540704
@@ -4168,11 +4174,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pips:
-  - {fileID: 7746201416634876860, guid: 941589424df0ae949a0bd1f3a3c19da5, type: 3}
-  - {fileID: 8680962920885761291, guid: 753eaac185b540446bf3374a3bc6fead, type: 3}
-  - {fileID: 1019283574685409242, guid: bfb49b05530dd404095179c5abde9c4a, type: 3}
   - {fileID: 771783255461161762, guid: bdb055006face924799cb3c48bbe9ac0, type: 3}
+  - {fileID: 8680962920885761291, guid: 753eaac185b540446bf3374a3bc6fead, type: 3}
   - {fileID: 1744699230037653761, guid: 935fd6d5d8c6c05408d751c2d58f8c69, type: 3}
+  - {fileID: 7746201416634876860, guid: 941589424df0ae949a0bd1f3a3c19da5, type: 3}
   delay: 0
 --- !u!61 &1973051587
 BoxCollider2D:

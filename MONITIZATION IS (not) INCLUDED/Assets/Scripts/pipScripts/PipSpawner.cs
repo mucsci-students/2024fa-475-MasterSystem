@@ -7,7 +7,7 @@ using System;
 public class PipManager : MonoBehaviour
 {
     //Public variables
-    public GameObject[] pips = new GameObject[3];
+    public GameObject[] pips = new GameObject[4];
     
     
     public float delay;
