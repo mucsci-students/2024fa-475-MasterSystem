@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Method to increase player's score
+
     public void ChangeScore(int amount){
         Score += amount; 
         if(Score>=goal){
