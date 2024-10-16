@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
             depthLabel.GetComponent<Text>().text = "Depth: " + depth;
         }
     }
+    public int getDepth()
+    {
+        return depth;
+    }
 
 
     private bool gameOver = false;

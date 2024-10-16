@@ -8,7 +8,9 @@ public class AdEnemy : Pip
 
 public override void Start(){
     pipBody = GetComponent<Rigidbody2D>();
-    speed = 2f;
+    GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
+    int depth = gameManager.getDepth();
+    speed = 2f + depth;
     hp = 1;
     isEnemy = true;
     moneyGive = 20;
