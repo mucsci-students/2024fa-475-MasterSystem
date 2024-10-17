@@ -6,6 +6,10 @@ TagManager:
   tags:
   - pipPreFab
   - levelui
+  - gameman
+  - BadpipPreFab
+  - TowerPrefab
+  - VirusPip
   layers:
   - Default
   - TransparentFX

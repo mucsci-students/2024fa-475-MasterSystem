@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
             depthLabel.GetComponent<Text>().text = "Depth: " + depth;
         }
     }
+    public int getDepth()
+    {
+        return depth;
+    }
 
 
     private bool gameOver = false;
@@ -56,17 +60,22 @@ public class GameManager : MonoBehaviour
     }
 
     // Method to increase player's score
+
     public void ChangeScore(int amount){
         Score += amount; 
-        if(Score>goal){
+        if(Score>=goal){
             Depth += 1;
             goal+=10;
             Score = 0;
+
         }
-        if(Score<0)
+        if(Score<0){
             GameOver(false);
-        if(Depth>8)
+        }
+        if(Depth>8){
             GameOver(true);
+        }
+        
     }
 
     public void ChangeMoney(int amount){
@@ -74,6 +83,14 @@ public class GameManager : MonoBehaviour
         if(money<0){
             GameOver(false);
         }
+    }
+    public int GetMoney()
+    {
+        return money;
+    }
+    public int GetScore()
+    {
+        return score;
     }
 
 
@@ -90,9 +107,11 @@ public class GameManager : MonoBehaviour
     // Get into game by loading level scene
     // Public and renamed for clarity
     public void LoadLevel(){
-        scoreLabel.enabled = true;
-        //moneyLabel.enabled = true;
-        depthLabel.enabled = true;
+
+        //scoreLabel.enabled = true;
+        moneyLabel.enabled = true;
+        //depthLabel.enabled = true;
+
         SceneManager.LoadScene("GameLevel");
     }
 

@@ -17,10 +17,23 @@ public class PlayerController : MonoBehaviour
     public GameObject AntivirusPrefab;
     public GameObject RAMPrefab;
     public GameObject MousePrefab;
+    public GameManager gameManager;
+    public int FireWallCost;
+    public int AntivirusCost;
+    public int RAMCost;
+    public int MouseCost;
+    public int CurCost;
 
     public void Start(){
         gridManager = FindObjectOfType<GridManager>();
         currentPos = new Vector2Int(4, 0); // Starting at the bottom-left corner
+        
+        FireWallCost = -150;
+        AntivirusCost = -200;
+        RAMCost = -50;
+        MouseCost = -100;
+        CurCost = 0;
+
         UpdatePlayerPosition();
     }
 
@@ -69,27 +82,41 @@ public class PlayerController : MonoBehaviour
     public void HandleInteraction(){
         if (Input.GetKeyDown(KeyCode.Space) && selectedTowerPrefab != null)
         {
+            GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
             // Check if the current tile is empty
+            if(gameManager.GetMoney() < CurCost)
+            {
+                //something something no money
+            }
+            else {
+
+            
             if (gridManager.IsTileEmpty(currentPos.x, currentPos.y))
             {
                 // Spawn the selected tower
+                gameManager.ChangeMoney(CurCost);
                 GameObject tower = Instantiate(selectedTowerPrefab, gridManager.offsetOrigin + new Vector3(currentPos.x * gridManager.tileSize, currentPos.y * gridManager.tileSize, 0), Quaternion.identity);
                 gridManager.PlaceObjectInTile(tower, currentPos.x, currentPos.y);
+            }
             }
         }
 
         // Select towers with 1-4 keys
         if (Input.GetKeyDown(KeyCode.Alpha1)){
             selectedTowerPrefab = FirewallPrefab;
+            CurCost = FireWallCost;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2)) {
             selectedTowerPrefab = AntivirusPrefab;
+            CurCost = AntivirusCost;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4)){
             selectedTowerPrefab = RAMPrefab;
+            CurCost = RAMCost;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3)){
             selectedTowerPrefab = MousePrefab;
+            CurCost = MouseCost;
         }
 
         // Unselect with escape key

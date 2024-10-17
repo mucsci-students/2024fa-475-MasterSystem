@@ -7,7 +7,7 @@ using System;
 public class PipManager : MonoBehaviour
 {
     //Public variables
-    public GameObject[] pips = new GameObject[3];
+    public GameObject[] pips = new GameObject[7];
     
     
     public float delay;
@@ -28,12 +28,16 @@ public class PipManager : MonoBehaviour
 
     public void SpawnPip()
     {        
-        //generates a random number between 0 and 2
-        int ran = UnityEngine.Random.Range(0,3);
+        //generates a random number between 0 and 6
+        int ran = UnityEngine.Random.Range(0,6);
         //finds a pip based on random number
         randomPip = pips[ran];
 
-        
+        if(randomPip.GetComponent<Pip>().randImage == true){
+            int ranImage = UnityEngine.Random.Range(0,2);
+            SpriteRenderer[] renders = randomPip.GetComponents<SpriteRenderer>();
+            renders[ranImage].enabled = true;
+        }
 
         //This will generate a random colomn for pips to spawn in, it should be random every time a pip is created maybe
         //Shifted to account for new grid.

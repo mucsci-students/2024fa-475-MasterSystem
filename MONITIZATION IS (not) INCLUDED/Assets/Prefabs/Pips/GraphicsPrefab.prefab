@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6905274763631468038}
   - component: {fileID: 5551589768184449541}
   - component: {fileID: 6247106009145846759}
+  - component: {fileID: -4421359655070607524}
   m_Layer: 0
   m_Name: GraphicsPrefab
-  m_TagString: Untagged
+  m_TagString: pipPreFab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,16 +99,35 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 14.37, y: 10.13}
+    newSize: {x: 14.37, y: 10.13}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-4421359655070607524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019283574685409242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31feb5cd76f4b2c4ea253c4601291104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  hp: 0
+  isEnemy: 0
+  moneyGive: 0
+  randImage: 0
+  gameManager: {fileID: 0}
+  pipBody: {fileID: 0}
 --- !u!1 &3015853652362661707
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +139,7 @@ GameObject:
   - component: {fileID: 2142330635651870215}
   - component: {fileID: 3125559630304226204}
   m_Layer: 0
-  m_Name: Graphics (2)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +223,7 @@ GameObject:
   - component: {fileID: 414771533683430124}
   - component: {fileID: 2869509466930751713}
   m_Layer: 0
-  m_Name: Graphics (3)
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,7 +307,7 @@ GameObject:
   - component: {fileID: 6327141836592637995}
   - component: {fileID: 2775908361531085575}
   m_Layer: 0
-  m_Name: Graphics (1)
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
