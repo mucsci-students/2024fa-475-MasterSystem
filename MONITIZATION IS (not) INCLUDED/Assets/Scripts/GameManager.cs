@@ -105,9 +105,9 @@ public class GameManager : MonoBehaviour
     // Get into game by loading level scene
     // Public and renamed for clarity
     public void LoadLevel(){
-        scoreLabel.enabled = true;
+        //scoreLabel.enabled = true;
         moneyLabel.enabled = true;
-        depthLabel.enabled = true;
+        //depthLabel.enabled = true;
         SceneManager.LoadScene("GameLevel");
     }
 

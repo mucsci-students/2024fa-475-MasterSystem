@@ -14,6 +14,11 @@ public override void Start(){
     hp = 1;
     isEnemy = true;
     moneyGive = 20;
-    scoreGive = 0;
+    randImage = false;
+    hasCollided = false;
+    }
+
+    public void FixedUpdate(){
+        pipBody.velocity = (new Vector2(0f, -speed));
     }
 }

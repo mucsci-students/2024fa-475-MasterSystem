@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: -3207521725066213085}
   m_Layer: 3
   m_Name: WormEnemy
-  m_TagString: pipPreFab
+  m_TagString: BadpipPreFab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   hp: 1
   isEnemy: 0
   moneyGive: 0
-  scoreGive: 0
+  randImage: 0
   gameManager: {fileID: 0}
   pipBody: {fileID: 0}
 --- !u!61 &1044731862432344493
@@ -209,7 +209,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
 --- !u!212 &-3207521725066213085
 SpriteRenderer:

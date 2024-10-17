@@ -9,7 +9,9 @@ public abstract class Pip : MonoBehaviour
     public int hp;
     public bool isEnemy;
     public int moneyGive;
-    public int scoreGive;
+    public bool randImage;
+
+    public bool hasCollided;
     public GameManager gameManager;
 
     public Rigidbody2D pipBody;
@@ -17,9 +19,7 @@ public abstract class Pip : MonoBehaviour
     // Initialize
     public abstract void Start();
 
-    public void FixedUpdate(){
-        pipBody.velocity = (new Vector2(0f, -speed));
-    }
+    
 
     // Method to take damage
     public void TakeDamage()
@@ -28,8 +28,8 @@ public abstract class Pip : MonoBehaviour
         if (hp <= 0)
         {
             GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
-            gameManager.ChangeScore(scoreGive);
             gameManager.ChangeMoney(moneyGive);
+            
             Die();
         }
     }
@@ -40,8 +40,8 @@ public abstract class Pip : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void OnMouseUp()
-    {
-        TakeDamage();
-    }
+    // public void OnMouseUp()
+    // {
+    //     TakeDamage();
+    // }
 }
