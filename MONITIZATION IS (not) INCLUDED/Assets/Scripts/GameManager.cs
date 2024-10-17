@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
         get{return money;}
         set{
             money = value;
-            moneyLabel.GetComponent<Text>().text = "GoFundMe Balance: " + money;
+            //moneyLabel.GetComponent<Text>().text = "GoFundMe Balance: " + money;
         }
     }    
     
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         Score = 0;
         Depth = 1;
         gameOverText.enabled = false;
-        moneyLabel.enabled = false;
+        //moneyLabel.enabled = false;
         scoreLabel.enabled = false;
         depthLabel.enabled = false;
 
@@ -61,7 +61,12 @@ public class GameManager : MonoBehaviour
         if(Score>goal){
             Depth += 1;
             goal+=10;
+            Score = 0;
         }
+        if(Score<0)
+            GameOver(false);
+        if(Depth>8)
+            GameOver(true);
     }
 
     public void ChangeMoney(int amount){
@@ -86,7 +91,7 @@ public class GameManager : MonoBehaviour
     // Public and renamed for clarity
     public void LoadLevel(){
         scoreLabel.enabled = true;
-        moneyLabel.enabled = true;
+        //moneyLabel.enabled = true;
         depthLabel.enabled = true;
         SceneManager.LoadScene("GameLevel");
     }
@@ -96,7 +101,7 @@ public class GameManager : MonoBehaviour
     // Return to menu by loading other scene
     public void ReturnToMenu(){
         scoreLabel.enabled = false;
-        moneyLabel.enabled = false;
+        //moneyLabel.enabled = false;
         depthLabel.enabled = false;
         SceneManager.LoadScene("MainMenu");
     }

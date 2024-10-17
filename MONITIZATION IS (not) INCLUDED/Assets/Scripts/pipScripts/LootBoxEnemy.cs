@@ -8,7 +8,8 @@ public class LootBoxEnemy : Pip
 
     public override void Start(){
         pipBody = GetComponent<Rigidbody2D>();
-        speed = 0.5f;
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        speed = 0.5f * gameManager.Depth;
         hp = 4;
         isEnemy = true;
     }

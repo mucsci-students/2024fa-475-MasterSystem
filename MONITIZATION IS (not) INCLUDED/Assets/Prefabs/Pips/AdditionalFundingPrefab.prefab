@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5351235262875575794}
   - component: {fileID: 4724293199066878052}
   - component: {fileID: 5288978667909886859}
+  - component: {fileID: -8337740809947272096}
   m_Layer: 0
   m_Name: AdditionalFundingPrefab
   m_TagString: Untagged
@@ -106,6 +107,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-8337740809947272096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7746201416634876860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3e4576c81524e4d8892b8f1a71810a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  hp: 0
+  isEnemy: 0
+  pipBody: {fileID: 0}
 --- !u!1 &8258720807885232285
 GameObject:
   m_ObjectHideFlags: 0
