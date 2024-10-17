@@ -277,7 +277,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+
   m_AnchoredPosition: {x: -25, y: 0}
+
   m_SizeDelta: {x: 270.2462, y: 83.8195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &385174965
@@ -453,7 +455,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+
   m_AnchoredPosition: {x: -369, y: 223}
+
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &563650931
@@ -582,6 +586,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+
 --- !u!1 &795692676
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +666,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'GoFundMe Balance: '
+
 --- !u!1 &1079459956
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newGameButton: {fileID: 410191619}
-  moneyLabel: {fileID: 795692679}
+  moneyLabel: {fileID: 0}
   goal: 5
   scoreLabel: {fileID: 1377489795}
   depthLabel: {fileID: 563650931}
@@ -764,7 +770,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+
   m_AnchoredPosition: {x: -186, y: 203.5}
+
   m_SizeDelta: {x: 270.2462, y: 83.8195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1377489794
@@ -1003,7 +1011,6 @@ RectTransform:
   m_Children:
   - {fileID: 1377489793}
   - {fileID: 326330375}
-  - {fileID: 795692677}
   - {fileID: 563650930}
   m_Father: {fileID: 1079459958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1073,7 +1080,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!1001 &2890816495604690820
 PrefabInstance:

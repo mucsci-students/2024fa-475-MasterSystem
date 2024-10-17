@@ -95,8 +95,10 @@ GameObject:
   - component: {fileID: 2555146111632675886}
   - component: {fileID: 5692962704215560322}
   - component: {fileID: 6878035117072009125}
+
   - component: {fileID: -3317405353137763669}
   - component: {fileID: -4109402615947823539}
+
   m_Layer: 0
   m_Name: EffBoostPrefab
   m_TagString: pipPreFab
@@ -192,6 +194,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+
 --- !u!212 &-3317405353137763669
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -245,6 +248,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &-4109402615947823539
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,6 +257,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8680962920885761291}
   m_Enabled: 1
   m_EditorHideFlags: 0
+
   m_Script: {fileID: 11500000, guid: 2986a59c0964972478ac75d7370e55dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+

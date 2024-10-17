@@ -48,8 +48,8 @@ public class PipManager : MonoBehaviour
         randomPip.transform.position += new Vector3(spawnCol * 1.84f, 0f, 0f);
         
         //randomPip.transform.position = transform.position /*+ new Vector3(spawnCol * 1.82f,0f,0f)*/;
-        
-        delay = UnityEngine.Random.Range(5f,8f);
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        delay = UnityEngine.Random.Range(5f,8f)/gameManager.Depth;
         Invoke("SpawnPip", delay);
     }
 
